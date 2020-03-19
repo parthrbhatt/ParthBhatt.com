@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Parth Bhatt">
+<meta name="keywords" content="">
+<meta name="description" content="Over a period of time I’ve seen several folks run into issues trying to setup NX to be able to remotely access their Linux machines. So, I thought it might be a good idea to list down the steps here.
+Following steps explain how you can setup free-nx server on Linux – for this post we use RedHat Enterprise Linux 6 – and then the NoMachine client on your Laptop/Desktop.">
+
+
+<meta property="og:description" content="Over a period of time I’ve seen several folks run into issues trying to setup NX to be able to remotely access their Linux machines. So, I thought it might be a good idea to list down the steps here.
+Following steps explain how you can setup free-nx server on Linux – for this post we use RedHat Enterprise Linux 6 – and then the NoMachine client on your Laptop/Desktop.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Up and Running With NX on Rhel">
+<meta name="twitter:title" content="Up and Running With NX on Rhel">
+<meta property="og:url" content="https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/">
+<meta property="twitter:url" content="https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/">
+<meta property="og:site_name" content="Parth Bhatt">
+<meta property="og:description" content="Over a period of time I’ve seen several folks run into issues trying to setup NX to be able to remotely access their Linux machines. So, I thought it might be a good idea to list down the steps here.
+Following steps explain how you can setup free-nx server on Linux – for this post we use RedHat Enterprise Linux 6 – and then the NoMachine client on your Laptop/Desktop.">
+<meta name="twitter:description" content="Over a period of time I’ve seen several folks run into issues trying to setup NX to be able to remotely access their Linux machines. So, I thought it might be a good idea to list down the steps here.
+Following steps explain how you can setup free-nx server on Linux – for this post we use RedHat Enterprise Linux 6 – and then the NoMachine client on your Laptop/Desktop.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2014-11-24T18:51:56">
+  
+  
+    <meta property="article:modified_time" content="2014-11-24T18:51:56">
+  
+  
+  
+    
+      <meta property="article:section" content="how-to">
+    
+  
+  
+    
+      <meta property="article:tag" content="linux">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@parthrbhatt">
+
+
+  <meta name="twitter:creator" content="@parthrbhatt">
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/575575103754276864/B3Ttv38N_400x400.jpeg">
+  <meta property="twitter:image" content="https://pbs.twimg.com/profile_images/575575103754276864/B3Ttv38N_400x400.jpeg">
+
+
+    <title>Up and Running With NX on Rhel</title>
+
+    <link rel="icon" href="https://parthbhatt.com/blog/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://parthbhatt.com/blog/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://parthbhatt.com/blog/">Parth Bhatt</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://parthbhatt.com/blog/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://pbs.twimg.com/profile_images/575575103754276864/B3Ttv38N_400x400.jpeg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://parthbhatt.com/blog/#about">
+          <img class="sidebar-profile-picture" src="https://pbs.twimg.com/profile_images/575575103754276864/B3Ttv38N_400x400.jpeg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Parth Bhatt</h4>
+        
+          <h5 class="sidebar-profile-bio"></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://parthbhatt.com/blog/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://parthbhatt.com/blog/categories/projects/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Projects</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://parthbhatt.com/bookshelf" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Bookshelf</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://parthbhatt.com/blog/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/parthrbhatt" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://linkedin.com/in/parthrbhatt" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/parthrbhatt" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://instagram.com/parthrbhatt" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-instagram"></i>
+      
+      <span class="sidebar-button-desc">Instagram</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://parthbhatt.com/blog/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Up and Running With NX on Rhel
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2014-11-24T18:51:56&#43;11:00">
+        
+  November 24, 2014
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://parthbhatt.com/blog/categories/how-to">how-to</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Over a period of time I’ve seen several folks run into issues trying to setup NX to be able to remotely access their Linux machines. So, I thought it might be a good idea to list down the steps here.</p>
+<p>Following steps explain how you can setup free-nx server on Linux – for this post we use RedHat Enterprise Linux 6 – and then the NoMachine client on your Laptop/Desktop.</p>
+<p>First, lets start by setting up the free-nx server on your Linux machine.</p>
+<h3 id="install-dependencies">Install Dependencies</h3>
+<p>Login to your Linux machine. Start by installing expect, if you don’t have it installed already.</p>
+<pre><code>   # yum install expect
+</code></pre><h3 id="download-and-install-free-nx">Download and install free-nx</h3>
+<pre><code>   # wget http://dl.atrpms.net/all/freenx-server-0.7.3-18.el6.x86_64.rpm
+   # wget http://dl.atrpms.net/all/nx-3.3.0-38.el6.x86_64.rpm
+
+   # yum -y localinstall nx-3.3.0-38.el6.x86_64.rpm
+   # yum -y localinstall freenx-server-0.7.3-18.el6.x86_64.rpm
+</code></pre><h3 id="setting-up-nx">Setting up NX</h3>
+<pre><code>   # export PATH=$PATH:/usr/sbin
+   # /usr/libexec/nx/nxsetup --install
+</code></pre><p>As mentioned here, you may have to add /usr/sbin to your PATH as “usermod” command (internally used by nxsetup) is located in /usr/sbin. For easier/quicker setup, use the defaults as you walk thru the prompts while running nxsetup.</p>
+<h3 id="start-the-server-or-confirm-that-it-is-running-using-the-following-command">Start the server (or confirm that it is running) using the following command</h3>
+<pre><code>   # /usr/libexec/nx/nxserver --start
+</code></pre><p>Now, Install the NoMachine client on your Laptop/Desktop.</p>
+<p>Login to your client machine from where you need to remotely access the Linux host and Download the No Machine client for your platform from <a href="https://www.nomachine.com/download">here</a>. Clients are available for OS X, Windows, Linux, Android &amp; iOS. Install, Launch the client and enter valid user credentials.</p>
+<p>If you have trouble logging into your Linux machine, try the following:</p>
+<ul>
+<li>Change your client settings so that it uses <em>NoMachine Login</em> instead of the default System Login.</li>
+<li>NX writes to the user’s home directory. So if the user you are logging-in as has a HOME dir that is mounted upon login and that mounting fails, your nx login will not work.</li>
+</ul>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://parthbhatt.com/blog/tags/linux/">linux</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://parthbhatt.com/blog/book-review-marooned-in-realtime-by-verner-vinge/" data-tooltip="Book Review: Marooned in Realtime by Verner Vinge">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://parthbhatt.com/blog/pyshorturl-a-url-shortening-lib-in-python/" data-tooltip="PyShortURL – A Url Shortening Lib in Python">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Parth Bhatt. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://parthbhatt.com/blog/book-review-marooned-in-realtime-by-verner-vinge/" data-tooltip="Book Review: Marooned in Realtime by Verner Vinge">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://parthbhatt.com/blog/pyshorturl-a-url-shortening-lib-in-python/" data-tooltip="PyShortURL – A Url Shortening Lib in Python">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparthbhatt.com%2Fblog%2Fup-and-running-with-nx-on-rhel%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fparthbhatt.com%2Fblog%2Fup-and-running-with-nx-on-rhel%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fparthbhatt.com%2Fblog%2Fup-and-running-with-nx-on-rhel%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://pbs.twimg.com/profile_images/575575103754276864/B3Ttv38N_400x400.jpeg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Parth Bhatt</h4>
+    
+      <div id="about-card-bio"></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Architect
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Sydney
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://parthbhatt.com/blog/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://parthbhatt.com/blog/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/parthbhatt.com\/blog\/up-and-running-with-nx-on-rhel\/';
+          
+            this.page.identifier = '\/up-and-running-with-nx-on-rhel\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

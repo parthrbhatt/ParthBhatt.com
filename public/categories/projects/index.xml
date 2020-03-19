@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>projects on Parth Bhatt</title>
+    <link>https://parthbhatt.com/blog/categories/projects/</link>
+    <description>Recent content in projects on Parth Bhatt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Apr 2012 19:22:03 +1100</lastBuildDate>
+    
+	<atom:link href="https://parthbhatt.com/blog/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PyShortURL – A Url Shortening Lib in Python</title>
+      <link>https://parthbhatt.com/blog/pyshorturl-a-url-shortening-lib-in-python/</link>
+      <pubDate>Sun, 29 Apr 2012 19:22:03 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/pyshorturl-a-url-shortening-lib-in-python/</guid>
+      <description>Its been sometime since I got on to twitter. And every time I happen to tweet a link, I watch my incredibly long urls magically shrink to a few chars. A few days ago, I happened to do a quick google search on url shortening that revealed some interesting info and I soon found myself playing with it. Here’s what came out of it. URL shorteners are used to transform huge, ugly looking, difficult to remember (and manage) urls into short urls.</description>
+    </item>
+    
+    <item>
+      <title>Shutterflow Photography Workflow Made Easy</title>
+      <link>https://parthbhatt.com/blog/shutterflow-photography-workflow-made-easy/</link>
+      <pubDate>Sat, 24 Sep 2011 19:01:11 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/shutterflow-photography-workflow-made-easy/</guid>
+      <description>So, it started with the thought of publishing some of the photos, I managed to click, online. The task would involve going thru the usual process of: Copy photos form my camera to my computer. Then watermark them. Then, possibly, add a frame around the image and finally publish to my favorite photo sharing service.
+Since, I have been uploading some of my photos to flickr already, I needed a good way to batch edit my photos and push them to flickr.</description>
+    </item>
+    
+  </channel>
+</rss>

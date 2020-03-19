@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Parth Bhatt</title>
+    <link>https://parthbhatt.com/blog/categories/</link>
+    <description>Recent content in Categories on Parth Bhatt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Nov 2018 18:47:43 +1100</lastBuildDate>
+    
+	<atom:link href="https://parthbhatt.com/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>book-review</title>
+      <link>https://parthbhatt.com/blog/categories/book-review/</link>
+      <pubDate>Wed, 28 Nov 2018 18:47:43 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/categories/book-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>how-to</title>
+      <link>https://parthbhatt.com/blog/categories/how-to/</link>
+      <pubDate>Mon, 24 Nov 2014 18:51:56 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/categories/how-to/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>projects</title>
+      <link>https://parthbhatt.com/blog/categories/projects/</link>
+      <pubDate>Sun, 29 Apr 2012 19:22:03 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/categories/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maps</title>
+      <link>https://parthbhatt.com/blog/categories/maps/</link>
+      <pubDate>Fri, 22 Jul 2011 19:31:13 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/categories/maps/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

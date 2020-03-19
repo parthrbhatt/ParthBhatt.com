@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Parth Bhatt</title>
+    <link>https://parthbhatt.com/blog/tags/</link>
+    <description>Recent content in Tags on Parth Bhatt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Nov 2018 18:47:43 +1100</lastBuildDate>
+    
+	<atom:link href="https://parthbhatt.com/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>books</title>
+      <link>https://parthbhatt.com/blog/tags/books/</link>
+      <pubDate>Wed, 28 Nov 2018 18:47:43 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://parthbhatt.com/blog/tags/linux/</link>
+      <pubDate>Mon, 24 Nov 2014 18:51:56 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://parthbhatt.com/blog/tags/git/</link>
+      <pubDate>Sun, 29 Apr 2012 19:22:03 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://parthbhatt.com/blog/tags/python/</link>
+      <pubDate>Sun, 29 Apr 2012 19:22:03 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JAI</title>
+      <link>https://parthbhatt.com/blog/tags/jai/</link>
+      <pubDate>Sat, 24 Sep 2011 19:01:11 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/tags/jai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://parthbhatt.com/blog/tags/java/</link>
+      <pubDate>Sat, 24 Sep 2011 19:01:11 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java Swing</title>
+      <link>https://parthbhatt.com/blog/tags/java-swing/</link>
+      <pubDate>Sat, 24 Sep 2011 19:01:11 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/tags/java-swing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Geolocation</title>
+      <link>https://parthbhatt.com/blog/tags/geolocation/</link>
+      <pubDate>Fri, 22 Jul 2011 19:31:13 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/tags/geolocation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://parthbhatt.com/blog/tags/javascript/</link>
+      <pubDate>Fri, 22 Jul 2011 19:31:13 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

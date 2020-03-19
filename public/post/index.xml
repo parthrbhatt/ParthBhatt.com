@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Parth Bhatt</title>
+    <link>https://parthbhatt.com/blog/post/</link>
+    <description>Recent content in Posts on Parth Bhatt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Nov 2018 18:47:43 +1100</lastBuildDate>
+    
+	<atom:link href="https://parthbhatt.com/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Book Review: Marooned in Realtime by Verner Vinge</title>
+      <link>https://parthbhatt.com/blog/book-review-marooned-in-realtime-by-verner-vinge/</link>
+      <pubDate>Wed, 28 Nov 2018 18:47:43 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/book-review-marooned-in-realtime-by-verner-vinge/</guid>
+      <description>Marooned in Realtime is a well written Sci-Fi murder mystery based in an era 50 million years from now. In this novel, Vernor Vinge presents an unconventional view of rather conventional Sci-Fi ideas like time travel, technological singularity, immortality etc. And he does so as innovatively as convincingly.
+There are only about 300 humans left on Earth and there are mixed opinions about what may have happened that led to the disappearance of mankind.</description>
+    </item>
+    
+    <item>
+      <title>Up and Running With NX on Rhel</title>
+      <link>https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/</link>
+      <pubDate>Mon, 24 Nov 2014 18:51:56 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/</guid>
+      <description>Over a period of time I’ve seen several folks run into issues trying to setup NX to be able to remotely access their Linux machines. So, I thought it might be a good idea to list down the steps here.
+Following steps explain how you can setup free-nx server on Linux – for this post we use RedHat Enterprise Linux 6 – and then the NoMachine client on your Laptop/Desktop.</description>
+    </item>
+    
+    <item>
+      <title>PyShortURL – A Url Shortening Lib in Python</title>
+      <link>https://parthbhatt.com/blog/pyshorturl-a-url-shortening-lib-in-python/</link>
+      <pubDate>Sun, 29 Apr 2012 19:22:03 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/pyshorturl-a-url-shortening-lib-in-python/</guid>
+      <description>Its been sometime since I got on to twitter. And every time I happen to tweet a link, I watch my incredibly long urls magically shrink to a few chars. A few days ago, I happened to do a quick google search on url shortening that revealed some interesting info and I soon found myself playing with it. Here’s what came out of it. URL shorteners are used to transform huge, ugly looking, difficult to remember (and manage) urls into short urls.</description>
+    </item>
+    
+    <item>
+      <title>Shutterflow Photography Workflow Made Easy</title>
+      <link>https://parthbhatt.com/blog/shutterflow-photography-workflow-made-easy/</link>
+      <pubDate>Sat, 24 Sep 2011 19:01:11 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/shutterflow-photography-workflow-made-easy/</guid>
+      <description>So, it started with the thought of publishing some of the photos, I managed to click, online. The task would involve going thru the usual process of: Copy photos form my camera to my computer. Then watermark them. Then, possibly, add a frame around the image and finally publish to my favorite photo sharing service.
+Since, I have been uploading some of my photos to flickr already, I needed a good way to batch edit my photos and push them to flickr.</description>
+    </item>
+    
+    <item>
+      <title>Geolocation With Google Maps Javascript Api</title>
+      <link>https://parthbhatt.com/blog/geolocation-with-google-maps-javascript-api/</link>
+      <pubDate>Fri, 22 Jul 2011 19:31:13 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/geolocation-with-google-maps-javascript-api/</guid>
+      <description>In the previous post, we saw how W3C Geolocation API can be used to obtain a user’s location. In this post we will see how the obtained geolocation information can be displayed on a map, using Google Maps JavaScript API v3. We will also see how location information in terms of (latitude, longitude) can be translated into a readable (street) address. This process of obtaining street address from a point location is called Reverse Geocoding.</description>
+    </item>
+    
+    <item>
+      <title>W3c Geolocation Api</title>
+      <link>https://parthbhatt.com/blog/w3c-geolocation-api/</link>
+      <pubDate>Wed, 22 Jun 2011 19:30:09 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/w3c-geolocation-api/</guid>
+      <description>I&#39;ve always liked the idea of a service that provides information keeping in mind the location from which it is requested. That certainly is a way to fill the user with information that is most relevant. For example, consider an application that shows all Chinese restaurants around you as opposed to an app that just shows you all Chinese restaurants. Or may be an app that says how far you are from the nearest KFC!</description>
+    </item>
+    
+  </channel>
+</rss>

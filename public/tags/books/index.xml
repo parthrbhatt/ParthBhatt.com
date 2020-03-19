@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>books on Parth Bhatt</title>
+    <link>https://parthbhatt.com/blog/tags/books/</link>
+    <description>Recent content in books on Parth Bhatt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Nov 2018 18:47:43 +1100</lastBuildDate>
+    
+	<atom:link href="https://parthbhatt.com/blog/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Book Review: Marooned in Realtime by Verner Vinge</title>
+      <link>https://parthbhatt.com/blog/book-review-marooned-in-realtime-by-verner-vinge/</link>
+      <pubDate>Wed, 28 Nov 2018 18:47:43 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/book-review-marooned-in-realtime-by-verner-vinge/</guid>
+      <description>Marooned in Realtime is a well written Sci-Fi murder mystery based in an era 50 million years from now. In this novel, Vernor Vinge presents an unconventional view of rather conventional Sci-Fi ideas like time travel, technological singularity, immortality etc. And he does so as innovatively as convincingly.
+There are only about 300 humans left on Earth and there are mixed opinions about what may have happened that led to the disappearance of mankind.</description>
+    </item>
+    
+  </channel>
+</rss>

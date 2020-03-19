@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maps on Parth Bhatt</title>
+    <link>https://parthbhatt.com/blog/categories/maps/</link>
+    <description>Recent content in maps on Parth Bhatt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Jul 2011 19:31:13 +1100</lastBuildDate>
+    
+	<atom:link href="https://parthbhatt.com/blog/categories/maps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Geolocation With Google Maps Javascript Api</title>
+      <link>https://parthbhatt.com/blog/geolocation-with-google-maps-javascript-api/</link>
+      <pubDate>Fri, 22 Jul 2011 19:31:13 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/geolocation-with-google-maps-javascript-api/</guid>
+      <description>In the previous post, we saw how W3C Geolocation API can be used to obtain a user’s location. In this post we will see how the obtained geolocation information can be displayed on a map, using Google Maps JavaScript API v3. We will also see how location information in terms of (latitude, longitude) can be translated into a readable (street) address. This process of obtaining street address from a point location is called Reverse Geocoding.</description>
+    </item>
+    
+    <item>
+      <title>W3c Geolocation Api</title>
+      <link>https://parthbhatt.com/blog/w3c-geolocation-api/</link>
+      <pubDate>Wed, 22 Jun 2011 19:30:09 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/w3c-geolocation-api/</guid>
+      <description>I&#39;ve always liked the idea of a service that provides information keeping in mind the location from which it is requested. That certainly is a way to fill the user with information that is most relevant. For example, consider an application that shows all Chinese restaurants around you as opposed to an app that just shows you all Chinese restaurants. Or may be an app that says how far you are from the nearest KFC!</description>
+    </item>
+    
+  </channel>
+</rss>

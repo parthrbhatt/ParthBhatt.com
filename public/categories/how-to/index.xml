@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>how-to on Parth Bhatt</title>
+    <link>https://parthbhatt.com/blog/categories/how-to/</link>
+    <description>Recent content in how-to on Parth Bhatt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Nov 2014 18:51:56 +1100</lastBuildDate>
+    
+	<atom:link href="https://parthbhatt.com/blog/categories/how-to/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Up and Running With NX on Rhel</title>
+      <link>https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/</link>
+      <pubDate>Mon, 24 Nov 2014 18:51:56 +1100</pubDate>
+      
+      <guid>https://parthbhatt.com/blog/up-and-running-with-nx-on-rhel/</guid>
+      <description>Over a period of time I’ve seen several folks run into issues trying to setup NX to be able to remotely access their Linux machines. So, I thought it might be a good idea to list down the steps here.
+Following steps explain how you can setup free-nx server on Linux – for this post we use RedHat Enterprise Linux 6 – and then the NoMachine client on your Laptop/Desktop.</description>
+    </item>
+    
+  </channel>
+</rss>
